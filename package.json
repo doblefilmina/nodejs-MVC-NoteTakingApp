@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/doblefilmina/nodejs-MVC-NoteTakingApp/issues"
   },
-  "homepage": "https://github.com/doblefilmina/nodejs-MVC-NoteTakingApp#readme"
+  "homepage": "https://github.com/doblefilmina/nodejs-MVC-NoteTakingApp#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.0.1"
+  }
 }
