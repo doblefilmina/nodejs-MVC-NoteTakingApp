@@ -1,0 +1,1 @@
+This is a Note Taking App to exercise the MVC architecture. #NodeJS #MVC #hapi #SQLite #sequelize #pug
