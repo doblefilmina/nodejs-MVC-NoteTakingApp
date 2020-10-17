@@ -1,3 +1,5 @@
+'use strict';
+
 const Hapi = require('@hapi/hapi');
 const Settings = require('./settings');
 
@@ -22,3 +24,5 @@ process.on('unhandleRejection', err => {
 });
 
 init();
+
+const dbSettings = Settings[Settings.env].db;
