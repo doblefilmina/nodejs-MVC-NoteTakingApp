@@ -2,15 +2,17 @@
 
 const Hapi = require('@hapi/hapi');
 const Settings = require('./settings');
-const Routes = require('./lib/routes')
+const Routes = require('./lib/routes');
+const Models = require('./lib/models/');
 
 const init = async() => {
   const server = new Hapi.Server({port: Settings.port});
 
   server.route(Routes);
 
+  await Models.sequelize.sync();
   await server.start();
-  console.log(`Server running at: ${server.info.uri}`)
+  console.log(`Server running at: ${server.info.uri}`);
 };
 
 process.on('unhandleRejection', err => {
