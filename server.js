@@ -6,7 +6,7 @@ const Routes = require('./lib/routes');
 const Models = require('./lib/models/');
 
 const init = async() => {
-  const server = new Hapi.Server({port: Settings.port});
+  const server = new Hapi.Server({ port: Settings.port });
 
   server.route(Routes);
 
@@ -15,11 +15,9 @@ const init = async() => {
   console.log(`Server running at: ${server.info.uri}`);
 };
 
-process.on('unhandleRejection', err => {
+process.on('unhandledRejection', err => {
   console.log(err);
   process.exit(1);
 });
 
 init();
-
-const dbSettings = Settings[Settings.env].db;
