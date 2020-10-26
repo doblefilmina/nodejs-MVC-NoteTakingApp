@@ -9,7 +9,7 @@ const Path = require("path");
 const init = async() => {
   const server = new Hapi.Server({ port: Settings.port });
 
-  await server.register([require("@hapi/vision")]);
+  await server.register([require("@hapi/vision"), require("@hapi/inert")]);
 
   server.views({
     engines: { pug: require("pug")},
@@ -22,7 +22,7 @@ const init = async() => {
 
   //Add routes
   server.route(Routes);
-  
+
   await Models.sequelize.sync();
   await server.start();
   console.log(`Server running at: ${server.info.uri}`);
